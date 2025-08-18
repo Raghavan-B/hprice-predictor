@@ -8,7 +8,7 @@
 
 # ------------------------------- CONFIG -------------------------------------
 
-PROJECT_ROOT="house-price-predictor"
+PROJECT_ROOT="hprice-predictor"
 INPUT_RAW="data/raw/house_data.csv"
 CLEANED_DATA="data/processed/cleaned_house_data.csv"
 FEATURED_DATA="data/processed/featured_house_data.csv"
@@ -99,13 +99,6 @@ run_model_training() {
 
 main() {
     check_dependencies
-
-    # Ensure we are in the project root directory
-    if [[ ! -d "$PROJECT_ROOT" ]]; then
-        echo "❌ '$PROJECT_ROOT' directory not found. Please run this script from the parent directory of the project."
-        exit 1
-    fi
-    cd "$PROJECT_ROOT" || exit 1
 
     run_data_processing
     run_feature_engineering
